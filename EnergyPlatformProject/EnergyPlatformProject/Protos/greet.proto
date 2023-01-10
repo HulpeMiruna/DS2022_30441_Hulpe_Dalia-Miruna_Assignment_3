@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "EnergyPlatformProject";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SendMessage (MessageRequest) returns (MessageReply);
+}
+
+// The request message containing the user's name.
+message MessageRequest {
+  string id = 1;
+  string message = 2;
+}
+
+// The response message containing the greetings.
+message MessageReply {
+   string id = 1;
+  string message = 2;
+}

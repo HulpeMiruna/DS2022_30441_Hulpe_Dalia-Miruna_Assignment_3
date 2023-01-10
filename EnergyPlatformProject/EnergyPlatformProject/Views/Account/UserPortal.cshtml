@@ -1,0 +1,10 @@
+﻿@using EnergyPlatformProject.Models
+@model UserPortalViewModel
+<ul id="notificationList">
+</ul>
+<a asp-controller="Account" asp-action="Chat" asp-route-id="@Model.AdminId" style="color:black">
+    <i class="fa fa-comments" aria-hidden="true"></i>
+</a>
+<div>
+    <partial name="_UserDevicesList" />
+</div>

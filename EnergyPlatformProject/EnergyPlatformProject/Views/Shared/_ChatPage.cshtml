@@ -1,0 +1,39 @@
+﻿@model ChatViewModel
+<head>
+    <link rel="stylesheet" href="~/css/chat.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="chat-page">
+    <div class="overflow-auto message-container" id="@(Model.CurrentUser == "e3b3943d-02c8-4f50-e9c2-08daba791f1c"? $"{Model.CurrentUser}-{Model.ToUser}": Model.CurrentUser)">
+        <div class="title">
+
+            <p>Chat with : @Model.User.UserName</p>
+
+        </div>
+        @*<div class="recieved-message">
+            Hello
+        </div>
+        <div class="sent-message">
+            Olaaaa
+        </div>
+        <div class="seen-message">
+            Seen <i class="fa fa-check" aria-hidden="true"></i>
+        </div>
+        *@
+        <div class="info d-none">
+            Typing...
+        </div>
+    </div>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control input-message" placeholder="Send message">
+            <input asp-for="@Model.FromUser" class="from-user" hidden />
+            <input asp-for="@Model.ToUser" class="to-user" hidden />
+        </div>
+        <a class="send-message-button">
+            <i class="fa fa-paper-plane"></i>
+        </a>
+    </form>
+</div>
+
